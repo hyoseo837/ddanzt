@@ -60,7 +60,7 @@ function initializeBoard() {
     shuffle(deck);
     for (let i = 0; i < deck.length; i++) {
         const element = deck[i];
-        board[i % 8].unshift(element);
+        board[i % 8].push(element);
     }
     return board;
 }
@@ -93,69 +93,35 @@ function step(board, completed) {
         if (element.length == 0) {
             continue;
         }
-        if (element[0].shape === "bonus") {
-            element.shift();
+
+        if (element.slice(-1)[0].shape == "bonus") {
+            element.pop();
             code = "Bonus";
             break;
         }
-        if (element[0].shape === "a") {
-            if (element[0].number === completed[0] + 1) {
-                element.shift();
+        if (element.slice(-1)[0].shape === "a") {
+            if (element.slice(-1)[0].number == completed + 1) {
+                element.pop();
                 code = "a";
                 break;
             }
         }
-        if (element[0].shape === "b") {
-            if (element[0].number === completed[1] + 1) {
-                element.shift();
+        if (element.slice(-1)[0].shape === "b") {
+            if (element.slice(-1)[0].number == completed + 1) {
+                element.pop();
                 code = "b";
                 break;
             }
         }
-        if (element[0].shape === "c") {
-            if (element[0].number === completed[2] + 1) {
-                element.shift();
+        if (element.slice(-1)[0].shape === "c") {
+            if (element.slice(-1)[0].number == completed + 1) {
+                element.pop();
                 code = "c";
                 break;
             }
         }
     }
     return [board, code];
-}
-
-/**
- * iterate steps until it won't change
- * @param {Array<Array<card>>} board
- * @param {Array<number>} completed
- * @param {boolean} isBonus
- * @returns
- */
-function iterateSteps(board, completed, isBonus) {
-    let tmpBoard = board;
-    let tmpCompleted = completed;
-    let tmpIsBonus = isBonus;
-    let tmpCode = "";
-    while (true) {
-        console.log(tmpBoard);
-        [tmpBoard, tmpCode] = step(tmpBoard, tmpCompleted);
-
-        if (tmpCode == "Bonus") {
-            tmpIsBonus = true;
-        }
-        if (tmpCode == "a") {
-            tmpCompleted[0] += 1;
-        }
-        if (tmpCode == "b") {
-            tmpCompleted[1] += 1;
-        }
-        if (tmpCode == "c") {
-            tmpCompleted[2] += 1;
-        }
-        if (tmpCode == "none") {
-            break;
-        }
-    }
-    return [tmpBoard, tmpCompleted, tmpIsBonus];
 }
 
 /**
@@ -167,6 +133,10 @@ function iterateSteps(board, completed, isBonus) {
  * @returns
  */
 function moveCard(board, from, numberOfCards, to) {
+    if (from > 10 || to > 10 || from < 0 || to < 0) {
+        console.log("wrong domain");
+        return board;
+    }
     if (from == to) {
         console.log("you can move to where it came from");
         return board;
@@ -180,7 +150,7 @@ function moveCard(board, from, numberOfCards, to) {
                 console.log("you cannot put more than 1 cards on extra holder");
                 return board;
             } else {
-                board[to].push(board[from].shift());
+                board[to].push(board[from].pop());
                 console.log("moved!");
                 console.log(board);
                 return board;
@@ -214,4 +184,4 @@ function moveCard(board, from, numberOfCards, to) {
     }
 }
 
-export { initializeBoard, moveCard };
+export { initializeBoard, moveCard, step, card };

@@ -4,14 +4,35 @@
 }
 
 .emptyHolder {
-    background-color: lightgray;
-    border: 2px solid black;
+    background-color: #efefef;
+    border: 2px dotted black;
     border-radius: 5px;
     width: 8%;
 
     float: left;
-    margin-left: 2.25%;
-    margin-right: 2.25%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.emptyBonusHolder {
+    background-color: grey;
+    border: 2px dotted black;
+    border-radius: 5px;
+    width: 8%;
+
+    float: left;
+    margin-left: 7%;
+    margin-right: 7%;
+}
+.filledBonusHolder {
+    background-color: red;
+    border: 2px dotted black;
+    border-radius: 5px;
+    width: 8%;
+
+    float: left;
+    margin-left: 7%;
+    margin-right: 7%;
 }
 
 .filledHolder {
@@ -24,7 +45,7 @@
 }
 
 .eachCard {
-    background-color: lightgray;
+    background-color: white;
     border: 2px solid black;
     border-radius: 5px;
     width: 100%;

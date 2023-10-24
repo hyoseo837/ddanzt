@@ -29,4 +29,40 @@ const CardHolder = ({ cards }) => {
     }
 };
 
-export default CardHolder;
+const BonusHolder = ({ isBonus }) => {
+    return (
+        <div
+            className={
+                isBonus
+                    ? styles["filledBonusHolder"]
+                    : styles["emptyBonusHolder"]
+            }
+        >
+            <div className={styles["box"]}></div>
+        </div>
+    );
+};
+
+const TargetHolder = ({ shape, completedNum }) => {
+    if (completedNum == 0) {
+        return (
+            <div className={styles["emptyHolder"]}>
+                <div className={styles["box"]}></div>
+            </div>
+        );
+    } else {
+        return (
+            <div className={styles["filledHolder"]}>
+                <div className={styles["eachCard"]}>
+                    <div className={styles["box"]}>
+                        <span>
+                            {shape}
+                            {completedNum}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+};
+export { CardHolder, BonusHolder, TargetHolder };
