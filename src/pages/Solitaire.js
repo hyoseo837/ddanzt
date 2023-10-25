@@ -6,7 +6,6 @@ import {
     TargetHolder,
 } from "../components/CardHolder";
 import styles from "../css/solitaire.module.css";
-import { prettyDOM } from "@testing-library/react";
 
 const Solitaire = () => {
     // const [mainBoard, setMainBoard] = useState(initializeBoard());

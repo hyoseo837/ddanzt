@@ -1,0 +1,31 @@
+.column {
+    background-color: grey;
+    width: 30px;
+    height: 180px;
+    border: 0px solid black;
+    float: left;
+}
+
+.marvelBox {
+    float: left;
+    width: 100%;
+}
+.gamePad {
+    width: 100%;
+    float: left;
+}
+
+button {
+    margin-top: 50px;
+    float: left;
+}
+
+.myMarvel {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 5px;
+    margin-left: 4px;
+    margin-right: 4px;
+    border: 1px solid;
+}

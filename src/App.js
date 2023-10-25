@@ -1,9 +1,13 @@
-import Solitaire from "./pages/Solitaire";
+import Connect4Pad from "./components/connect4Pad";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 
 function App() {
     return (
         <div>
-            <Solitaire />
+            <DndProvider backend={HTML5Backend}>
+                <Connect4Pad />
+            </DndProvider>
         </div>
     );
 }
