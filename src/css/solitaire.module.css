@@ -1,13 +1,93 @@
-.bonusHolder {
+body {
+    background-color: #015032;
+}
+
+.card {
+    width: 50px;
+    height: 85px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: white;
+    float: left;
+    border: solid black;
+    font-size: x-large;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.emptyCard {
+    width: 50px;
+    height: 85px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: grey;
+    border: dotted black;
+    float: left;
+}
+
+.emptyBonus {
+    width: 50px;
+    height: 85px;
+    margin: 5px;
+    margin-left: 40px;
+    margin-right: 40px;
+    border-radius: 5px;
+    background-color: grey;
+    border: dotted black;
+    float: left;
+}
+.finalHolder {
+    width: 50px;
+    height: 85px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: gray;
+    border: dotted black;
+    float: left;
+}
+
+.bonusCard {
+    width: 50px;
+    height: 85px;
+    margin: 5px;
+    margin-left: 40px;
+    margin-right: 40px;
+    border-radius: 5px;
+    background-color: white;
+    border: solid black;
+    float: left;
+}
+
+.cardHolder {
+    float: left;
+    width: 60px;
+    height: 100%;
+    margin-right: 20px;
+}
+
+.extraHolder {
     float: left;
     width: 100%;
-    margin-bottom: 50px;
 }
 
 .mainHolder {
+    float: left;
     width: 100%;
 }
 
-body {
-    background-color: #015032;
+.specialButtons {
+    float: left;
+    margin-left: 20px;
+    width: 20px;
+    height: 85px;
+}
+
+.specialButton {
+    width: 20px;
+    height: 20px;
+    margin-top: 10px;
+    text-align: center;
 }

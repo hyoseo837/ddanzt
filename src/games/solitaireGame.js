@@ -65,19 +65,28 @@ function initializeBoard() {
     return board;
 }
 
-/**
- * return true if the game is finished (every card was arrainged)
- * @param {Array<Array<card>>} board
- * @returns
- */
-function isFinished(board) {
-    for (let i = 0; i < board.length; i++) {
-        const element = board[i];
-        if (element.length != 0) {
-            return false;
+function isSelectable(lst) {
+    if (lst.length === 1) {
+        return true;
+    } else {
+        for (let i = 0; i < lst.length; i++) {
+            const element = lst[i];
+            if (["x", "y", "z", "bonus"].includes(element.shape)) {
+                return false;
+            }
+        }
+        for (let i = 0; i < lst.length - 1; i++) {
+            if (lst[i].shape === lst[i + 1].shape) {
+                return false;
+            } else {
+                if (lst[i].number === lst[i + 1].number - 1) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
         }
     }
-    return true;
 }
 
 /**
@@ -90,31 +99,31 @@ function step(board, completed) {
     let code = "none";
     for (let i = 0; i < board.length; i++) {
         const element = board[i];
-        if (element.length == 0) {
+        if (element.length === 0) {
             continue;
         }
 
-        if (element.slice(-1)[0].shape == "bonus") {
+        if (element.slice(-1)[0].shape === "bonus") {
             element.pop();
             code = "Bonus";
             break;
         }
         if (element.slice(-1)[0].shape === "a") {
-            if (element.slice(-1)[0].number == completed + 1) {
+            if (element.slice(-1)[0].number === completed + 1) {
                 element.pop();
                 code = "a";
                 break;
             }
         }
         if (element.slice(-1)[0].shape === "b") {
-            if (element.slice(-1)[0].number == completed + 1) {
+            if (element.slice(-1)[0].number === completed + 1) {
                 element.pop();
                 code = "b";
                 break;
             }
         }
         if (element.slice(-1)[0].shape === "c") {
-            if (element.slice(-1)[0].number == completed + 1) {
+            if (element.slice(-1)[0].number === completed + 1) {
                 element.pop();
                 code = "c";
                 break;
@@ -137,12 +146,12 @@ function moveCard(board, from, numberOfCards, to) {
         console.log("wrong domain");
         return board;
     }
-    if (from == to) {
+    if (from === to) {
         console.log("you can move to where it came from");
         return board;
     }
     if (to >= 8) {
-        if (board[to].length != 0) {
+        if (board[to].length !== 0) {
             console.log("something is there");
             return board;
         } else {
@@ -150,7 +159,7 @@ function moveCard(board, from, numberOfCards, to) {
                 console.log("you cannot put more than 1 cards on extra holder");
                 return board;
             } else {
-                board[to].push(board[from].pop());
+                board[to].unshift(board[from].shift());
                 console.log("moved!");
                 console.log(board);
                 return board;
@@ -158,19 +167,27 @@ function moveCard(board, from, numberOfCards, to) {
         }
     } else {
         let tmp = board[from].slice(0, numberOfCards);
-        if (board[to].length == 0) {
+        if (board[to].length === 0) {
             board[from] = board[from].slice(numberOfCards);
             board[to] = tmp;
             console.log("moved!");
             return board;
         } else {
-            const topCard = tmp.slice[-1];
+            const topCard = tmp.slice(-1)[0];
             const targetCard = board[to][0];
+            if (["x", "y", "z", "bonus"].includes(targetCard.shape)) {
+                console.log("you cannot put on the special card");
+                return board;
+            }
+            if (["x", "y", "z", "bonus"].includes(topCard.shape)) {
+                console.log("you cannot put the special card ");
+                return board;
+            }
             if (topCard.shape == targetCard.shape) {
                 console.log("you cannot put on the same shape");
                 return board;
             } else {
-                if (topCard.number == targetCard.number - 1) {
+                if (topCard.number === targetCard.number - 1) {
                     board[from] = board[from].slice(numberOfCards);
                     board[to] = [...tmp, ...board[to]];
                     console.log("moved!");
@@ -184,4 +201,4 @@ function moveCard(board, from, numberOfCards, to) {
     }
 }
 
-export { initializeBoard, moveCard, step, card };
+export { initializeBoard, moveCard, step, card, isSelectable };

@@ -53,27 +53,27 @@ const Connect4Pad = () => {
         ];
         for (let i = 0; i < 7; i++) {
             for (let j = 0; j < gameBoard[i].length; j++) {
-                tmp[i][j] = gameBoard[i][j].color == "red" ? 1 : 2;
+                tmp[i][j] = gameBoard[i][j].color === "red" ? 1 : 2;
             }
         }
         for (let i = 0; i < 7; i++) {
             let counter = 0;
             for (let j = 0; j < 6; j++) {
                 const marvel = tmp[i][j];
-                if (marvel == 1) {
+                if (marvel === 1) {
                     if (counter < 0) {
                         counter = 0;
                     }
                     counter += 1;
-                    if (counter == 4) {
+                    if (counter === 4) {
                         return "Red";
                     }
-                } else if (marvel == 2) {
+                } else if (marvel === 2) {
                     if (counter > 0) {
                         counter = 0;
                     }
                     counter -= 1;
-                    if (counter == -4) {
+                    if (counter === -4) {
                         return "Blue";
                     }
                 } else {
@@ -85,20 +85,20 @@ const Connect4Pad = () => {
             let counter = 0;
             for (let i = 0; i < 7; i++) {
                 const marvel = tmp[i][j];
-                if (marvel == 1) {
+                if (marvel === 1) {
                     if (counter < 0) {
                         counter = 0;
                     }
                     counter += 1;
-                    if (counter == 4) {
+                    if (counter === 4) {
                         return "Red";
                     }
-                } else if (marvel == 2) {
+                } else if (marvel === 2) {
                     if (counter > 0) {
                         counter = 0;
                     }
                     counter -= 1;
-                    if (counter == -4) {
+                    if (counter === -4) {
                         return "Blue";
                     }
                 } else {
@@ -113,9 +113,9 @@ const Connect4Pad = () => {
                     tmp[i + 1][j + 1] *
                     tmp[i + 2][j + 2] *
                     tmp[i + 3][j + 3];
-                if (foo == 1) {
+                if (foo === 1) {
                     return "Red";
-                } else if (foo == 16) {
+                } else if (foo === 16) {
                     return "Blue";
                 }
             }
@@ -127,16 +127,16 @@ const Connect4Pad = () => {
                     tmp[i - 1][j + 1] *
                     tmp[i - 2][j + 2] *
                     tmp[i - 3][j + 3];
-                if (foo == 1) {
+                if (foo === 1) {
                     return "Red";
-                } else if (foo == 16) {
+                } else if (foo === 16) {
                     return "Blue";
                 }
             }
         }
         for (let i = 0; i < 7; i++) {
             for (let j = 0; j < 6; j++) {
-                if ((tmp[i], [j] == 0)) {
+                if (tmp[i][j] === 0) {
                     return "None";
                 }
             }
@@ -148,7 +148,7 @@ const Connect4Pad = () => {
         setPad((current) => {
             let tmp = current;
             for (let i = 0; i < current.length; i++) {
-                if (i == index) {
+                if (i === index) {
                     if (tmp[i].length < 6) {
                         tmp[i] = [...current[i], value];
                         setRedTurn((current) => !current);
@@ -167,13 +167,13 @@ const Connect4Pad = () => {
     };
 
     let tmp = checkWin(pad);
-    if (tmp == "Red") {
+    if (tmp === "Red") {
         alert("RED WIN!!");
         reset();
-    } else if (tmp == "Blue") {
+    } else if (tmp === "Blue") {
         alert("BLUE WIN!!");
         reset();
-    } else if (tmp == "Draw") {
+    } else if (tmp === "Draw") {
         alert("DRAW...");
         reset();
     }

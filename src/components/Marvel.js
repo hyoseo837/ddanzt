@@ -13,7 +13,7 @@ const Marvel = ({ color }) => {
     return (
         <div
             className={styles["marvel"]}
-            style={{ backgroundColor: color == "blue" ? "blue" : "red" }}
+            style={{ backgroundColor: color === "blue" ? "blue" : "red" }}
             ref={dragRef}
         ></div>
     );

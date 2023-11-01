@@ -1,11 +1,11 @@
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import { Basket } from "../components/Basket";
+import Connect4Pad from "../components/Connect4Pad";
 
 const Connect4 = () => {
     return (
         <DndProvider backend={HTML5Backend}>
-            <Basket />
+            <Connect4Pad />
         </DndProvider>
     );
 };
