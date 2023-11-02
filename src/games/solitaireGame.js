@@ -89,48 +89,16 @@ function isSelectable(lst) {
     }
 }
 
-/**
- * return the board after 1 step and code of change
- * @param {*} board
- * @param {*} completed
- * @returns
- */
-function step(board, completed) {
-    let code = "none";
+function shownCards(board) {
+    let tmp = [];
     for (let i = 0; i < board.length; i++) {
-        const element = board[i];
-        if (element.length === 0) {
+        if (board[i].length === 0) {
+            tmp.push(null);
             continue;
         }
-
-        if (element.slice(-1)[0].shape === "bonus") {
-            element.pop();
-            code = "Bonus";
-            break;
-        }
-        if (element.slice(-1)[0].shape === "a") {
-            if (element.slice(-1)[0].number === completed + 1) {
-                element.pop();
-                code = "a";
-                break;
-            }
-        }
-        if (element.slice(-1)[0].shape === "b") {
-            if (element.slice(-1)[0].number === completed + 1) {
-                element.pop();
-                code = "b";
-                break;
-            }
-        }
-        if (element.slice(-1)[0].shape === "c") {
-            if (element.slice(-1)[0].number === completed + 1) {
-                element.pop();
-                code = "c";
-                break;
-            }
-        }
+        tmp.push(board[i][0]);
     }
-    return [board, code];
+    return tmp;
 }
 
 /**
@@ -161,7 +129,6 @@ function moveCard(board, from, numberOfCards, to) {
             } else {
                 board[to].unshift(board[from].shift());
                 console.log("moved!");
-                console.log(board);
                 return board;
             }
         }
@@ -201,4 +168,4 @@ function moveCard(board, from, numberOfCards, to) {
     }
 }
 
-export { initializeBoard, moveCard, step, card, isSelectable };
+export { initializeBoard, moveCard, card, isSelectable, shownCards };
