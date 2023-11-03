@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import styles from "../css/solitaire.module.css";
 import React from "react";
 import {
-    card,
     initializeBoard,
     isSelectable,
     moveCard,
@@ -41,7 +40,7 @@ const SolitaireBoard = () => {
         if (!tmp.slice(8).includes(null)) {
             let foo = false;
             for (let i = 8; i < 11; i++) {
-                if (tmp[i].shape == shape) {
+                if (tmp[i].shape === shape) {
                     foo = true;
                 }
             }
@@ -55,7 +54,7 @@ const SolitaireBoard = () => {
             if (element === null) {
                 continue;
             }
-            if (element.shape == shape) {
+            if (element.shape === shape) {
                 counter += 1;
             }
         }
@@ -286,11 +285,13 @@ const SolitaireBoard = () => {
                     <img
                         className={styles["cardImg"]}
                         src={images["Card" + shape + ".png"]}
+                        alt="loading"
                     ></img>
                 ) : (
                     <img
                         className={styles["cardImg"]}
                         src={images["Card" + shape + number + ".png"]}
+                        alt="loading"
                     ></img>
                 )}
             </div>
@@ -324,6 +325,7 @@ const SolitaireBoard = () => {
                 <img
                     className={styles["cardImg"]}
                     src={images["Cardbonus.png"]}
+                    alt="loading"
                 ></img>
             </div>
         ) : (
@@ -354,6 +356,7 @@ const SolitaireBoard = () => {
                             "Card" + shape + completedLst[shapeIndex] + ".png"
                         ]
                     }
+                    alt="loading"
                 ></img>
             </div>
         );
@@ -365,6 +368,7 @@ const SolitaireBoard = () => {
                 <img
                     className={styles["cardImg"]}
                     src={images["Card" + shape + ".png"]}
+                    alt="loading"
                 ></img>
             </div>
         );
