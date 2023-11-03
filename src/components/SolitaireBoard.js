@@ -296,8 +296,12 @@ const SolitaireBoard = () => {
     };
 
     const BonusHolder = () => {
-        return (
-            <div className={styles[isBonus ? "bonusCard" : "emptyBonus"]}></div>
+        return isBonus ? (
+            <div className={styles["bonusCard"]}>
+                <img src={images["Cardbonus.png"]}></img>
+            </div>
+        ) : (
+            <div className={styles["emptyBonus"]}></div>
         );
     };
 
@@ -317,63 +321,75 @@ const SolitaireBoard = () => {
                     onComplete(shape);
                 }}
             >
-                <span>
-                    {shape}
-                    {completedLst[shapeIndex]}
-                </span>
+                <img
+                    src={
+                        images[
+                            "Card" + shape + completedLst[shapeIndex] + ".png"
+                        ]
+                    }
+                ></img>
             </div>
         );
     };
 
     const FakeCard = ({ shape }) => {
-        return <div className={styles["fakeCard"]}>{shape}</div>;
+        return (
+            <div className={styles["fakeCard"]}>
+                <img src={images["Card" + shape + ".png"]}></img>
+                {shape}
+            </div>
+        );
     };
 
     useEffect(step, [...mainBoard.map((column) => [...column])]);
 
     return (
         <div className={styles["base"]}>
-            <div className={styles["extraHolder"]}>
-                {mainBoard.slice(8, 11).map((holder, i) => (
-                    <ExtraHolder index={8 + i} key={i} />
-                ))}
-                <div className={styles["specialButtons"]}>
-                    <button
-                        className={styles["specialButton"]}
-                        onClick={() => {
-                            collect("x");
-                        }}
-                    >
-                        x
-                    </button>
-                    <button
-                        className={styles["specialButton"]}
-                        onClick={() => {
-                            collect("y");
-                        }}
-                    >
-                        y
-                    </button>
-                    <button
-                        className={styles["specialButton"]}
-                        onClick={() => {
-                            collect("z");
-                        }}
-                    >
-                        z
-                    </button>
+            <div className={styles["board"]}>
+                <div className={styles["extraHolder"]}>
+                    {mainBoard.slice(8, 11).map((holder, i) => (
+                        <ExtraHolder index={8 + i} key={i} />
+                    ))}
+                    <div className={styles["specialButtons"]}>
+                        <button
+                            className={styles["specialButton"]}
+                            onClick={() => {
+                                collect("x");
+                            }}
+                        >
+                            x
+                        </button>
+                        <button
+                            className={styles["specialButton"]}
+                            onClick={() => {
+                                collect("y");
+                            }}
+                        >
+                            y
+                        </button>
+                        <button
+                            className={styles["specialButton"]}
+                            onClick={() => {
+                                collect("z");
+                            }}
+                        >
+                            z
+                        </button>
+                    </div>
+                    <BonusHolder />
+                    <FinalHolder shape="a" />
+                    <FinalHolder shape="b" />
+                    <FinalHolder shape="c" />
                 </div>
-                <BonusHolder />
-                <FinalHolder shape="a" />
-                <FinalHolder shape="b" />
-                <FinalHolder shape="c" />
+                <div className={styles["mainHolder"]}>
+                    {mainBoard.slice(0, 8).map((holder, i) => (
+                        <CardHolder index={i} key={i} />
+                    ))}
+                </div>
             </div>
-            <div className={styles["mainHolder"]}>
-                {mainBoard.slice(0, 8).map((holder, i) => (
-                    <CardHolder index={i} key={i} />
-                ))}
-            </div>
-            <button onClick={reset}>reset</button>
+            <button className={styles["resetButton"]} onClick={reset}>
+                reset
+            </button>
         </div>
     );
 };
