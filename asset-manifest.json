@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/ddanzt/static/css/main.91c569e1.css",
+    "main.css": "/ddanzt/static/css/main.53fa50d2.css",
     "main.js": "/ddanzt/static/js/main.fb5ae526.js",
     "index.html": "/ddanzt/index.html",
-    "main.91c569e1.css.map": "/ddanzt/static/css/main.91c569e1.css.map",
+    "main.53fa50d2.css.map": "/ddanzt/static/css/main.53fa50d2.css.map",
     "main.fb5ae526.js.map": "/ddanzt/static/js/main.fb5ae526.js.map"
   },
   "entrypoints": [
-    "static/css/main.91c569e1.css",
+    "static/css/main.53fa50d2.css",
     "static/js/main.fb5ae526.js"
   ]
 }
