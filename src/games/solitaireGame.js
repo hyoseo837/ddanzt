@@ -28,12 +28,6 @@ function shuffle(array) {
     return array;
 }
 
-/**
- * Returns the full deck of card for solitaire game.
- *
- * Cards from 1 to 9 with 3 shapes, three set of 4 shapecard, one bonus card
- * => (40) cards
- */
 function fullDeck() {
     const wholeDeck = [];
     for (let i = 0; i < 9; i++) {
@@ -79,13 +73,12 @@ function isSelectable(lst) {
             if (lst[i].shape === lst[i + 1].shape) {
                 return false;
             } else {
-                if (lst[i].number === lst[i + 1].number - 1) {
-                    return true;
-                } else {
+                if (lst[i].number !== lst[i + 1].number - 1) {
                     return false;
                 }
             }
         }
+        return true;
     }
 }
 
@@ -101,14 +94,6 @@ function shownCards(board) {
     return tmp;
 }
 
-/**
- * move number of cards from
- * @param {Array<Array<card>>} board playing board
- * @param {number} from index of where it move from on the board
- * @param {number} numberOfCards  number of cards that is moving
- * @param {number} to  index of where it move to on the board
- * @returns
- */
 function moveCard(board, from, numberOfCards, to) {
     if (from > 10 || to > 10 || from < 0 || to < 0) {
         console.log("wrong domain");

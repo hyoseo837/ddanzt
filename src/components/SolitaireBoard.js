@@ -10,6 +10,17 @@ import {
 import myReverse from "../functions/myReverse";
 // import { animated, useSpring } from "@react-spring/web";
 
+function importAll(r) {
+    let images = {};
+    r.keys().map((item, index) => {
+        images[item.replace("./", "")] = r(item);
+    });
+    return images;
+}
+const images = importAll(
+    require.context("../assets/solitaire", false, /\.(png|jpe?g|svg)$/)
+);
+
 const SolitaireBoard = () => {
     const [mainBoard, setMainBoard] = useState(initializeBoard());
     const [completedLst, setCompletedLst] = useState([0, 0, 0]);
@@ -254,10 +265,11 @@ const SolitaireBoard = () => {
                             : "none",
                 }}
             >
-                <span>
-                    {shape}
-                    {number}
-                </span>
+                {["x", "y", "z", "bonus"].includes(shape) ? (
+                    <img src={images["Card" + shape + ".png"]}></img>
+                ) : (
+                    <img src={images["Card" + shape + number + ".png"]}></img>
+                )}
             </div>
         );
     };
