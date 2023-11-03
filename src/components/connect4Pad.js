@@ -192,7 +192,9 @@ const Connect4Pad = () => {
             <div className={styles["marvelBox"]}>
                 {redTurn ? <Marvel color={"red"} /> : <Marvel color={"blue"} />}
             </div>
-            <button onClick={reset}>reset</button>
+            <button className={styles["resetButton"]} onClick={reset}>
+                reset
+            </button>
         </div>
     );
 };

@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import styles from "../css/solitaire.module.css";
 import React from "react";
 import {
+    card,
     initializeBoard,
     isSelectable,
     moveCard,
     shownCards,
 } from "../games/solitaireGame";
 import myReverse from "../functions/myReverse";
-// import { animated, useSpring } from "@react-spring/web";
 
 function importAll(r) {
     let images = {};
@@ -60,6 +60,15 @@ const SolitaireBoard = () => {
             }
         }
         return counter === 4;
+    };
+
+    const isSolved = (tmp) => {
+        for (let i = 0; i < tmp.length; i++) {
+            if (tmp[i] !== null) {
+                return false;
+            }
+        }
+        return true;
     };
 
     const collect = (shape) => {
@@ -123,9 +132,17 @@ const SolitaireBoard = () => {
         }
     };
 
+    const congratMessage = async () => {
+        setTimeout(() => {
+            alert("Cleared!");
+        }, 500);
+    };
+
     const step = () => {
-        console.log("step run");
         let tmp = shownCards(mainBoard);
+        if (isSolved(tmp)) {
+            congratMessage();
+        }
         for (let i = 0; i < tmp.length; i++) {
             const element = tmp[i];
             if (element !== null) {
@@ -257,7 +274,7 @@ const SolitaireBoard = () => {
                 style={{
                     translate:
                         "0px " +
-                        -50 * (mainBoard[rowIndex].length - 1 - index) +
+                        -60 * (mainBoard[rowIndex].length - 1 - index) +
                         "px",
                     boxShadow:
                         selected[0] === rowIndex && selected[1] >= index
@@ -266,9 +283,15 @@ const SolitaireBoard = () => {
                 }}
             >
                 {["x", "y", "z", "bonus"].includes(shape) ? (
-                    <img src={images["Card" + shape + ".png"]}></img>
+                    <img
+                        className={styles["cardImg"]}
+                        src={images["Card" + shape + ".png"]}
+                    ></img>
                 ) : (
-                    <img src={images["Card" + shape + number + ".png"]}></img>
+                    <img
+                        className={styles["cardImg"]}
+                        src={images["Card" + shape + number + ".png"]}
+                    ></img>
                 )}
             </div>
         );
@@ -298,7 +321,10 @@ const SolitaireBoard = () => {
     const BonusHolder = () => {
         return isBonus ? (
             <div className={styles["bonusCard"]}>
-                <img src={images["Cardbonus.png"]}></img>
+                <img
+                    className={styles["cardImg"]}
+                    src={images["Cardbonus.png"]}
+                ></img>
             </div>
         ) : (
             <div className={styles["emptyBonus"]}></div>
@@ -322,6 +348,7 @@ const SolitaireBoard = () => {
                 }}
             >
                 <img
+                    className={styles["cardImg"]}
                     src={
                         images[
                             "Card" + shape + completedLst[shapeIndex] + ".png"
@@ -335,8 +362,10 @@ const SolitaireBoard = () => {
     const FakeCard = ({ shape }) => {
         return (
             <div className={styles["fakeCard"]}>
-                <img src={images["Card" + shape + ".png"]}></img>
-                {shape}
+                <img
+                    className={styles["cardImg"]}
+                    src={images["Card" + shape + ".png"]}
+                ></img>
             </div>
         );
     };
