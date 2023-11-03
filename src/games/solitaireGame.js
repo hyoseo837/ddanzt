@@ -135,7 +135,7 @@ function moveCard(board, from, numberOfCards, to) {
                 console.log("you cannot put the special card ");
                 return board;
             }
-            if (topCard.shape == targetCard.shape) {
+            if (topCard.shape === targetCard.shape) {
                 console.log("you cannot put on the same shape");
                 return board;
             } else {
