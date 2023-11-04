@@ -27,6 +27,11 @@ const SolitaireBoard = () => {
     const [selected, setSelected] = useState([-1, 0]);
     const [isUsable, setIsUsable] = useState([null, null, null]);
 
+    const [winCount, setWinCount] = useState(
+        JSON.parse(localStorage.getItem("win-count")) || 0
+    );
+    localStorage.setItem("win-count", JSON.stringify(winCount));
+
     const reset = () => {
         setMainBoard(initializeBoard());
         setIsBonus(false);
@@ -134,6 +139,9 @@ const SolitaireBoard = () => {
     const congratMessage = async () => {
         setTimeout(() => {
             alert("Cleared!");
+            setWinCount((current) => current + 1);
+            localStorage.setItem("win-count", JSON.stringify(winCount));
+            reset();
         }, 500);
     };
 
@@ -386,28 +394,25 @@ const SolitaireBoard = () => {
                     <div className={styles["specialButtons"]}>
                         <button
                             className={styles["specialButton"]}
+                            style={{ backgroundColor: "#ABABAB" }}
                             onClick={() => {
                                 collect("x");
                             }}
-                        >
-                            x
-                        </button>
+                        ></button>
                         <button
                             className={styles["specialButton"]}
+                            style={{ backgroundColor: "#d7b160" }}
                             onClick={() => {
                                 collect("y");
                             }}
-                        >
-                            y
-                        </button>
+                        ></button>
                         <button
                             className={styles["specialButton"]}
+                            style={{ backgroundColor: "#AD8256" }}
                             onClick={() => {
                                 collect("z");
                             }}
-                        >
-                            z
-                        </button>
+                        ></button>
                     </div>
                     <BonusHolder />
                     <FinalHolder shape="a" />
@@ -420,9 +425,12 @@ const SolitaireBoard = () => {
                     ))}
                 </div>
             </div>
-            <button className={styles["resetButton"]} onClick={reset}>
-                reset
-            </button>
+            <div className={styles["utilityBar"]}>
+                <button className={styles["resetButton"]} onClick={reset}>
+                    reset
+                </button>
+                <div className={styles["winCount"]}>win : {winCount}</div>
+            </div>
         </div>
     );
 };

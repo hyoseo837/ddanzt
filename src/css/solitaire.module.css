@@ -136,4 +136,19 @@
 
 .resetButton {
     margin-top: 5px;
+    font-family: cursive;
+}
+
+.winCount {
+    font-weight: 900;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 7px;
+    font-family: cursive;
+}
+
+.utilityBar {
+    grid-row: span;
+    position: relative;
 }
