@@ -5,7 +5,7 @@ import SnakeGame from "./pages/SnakeGame";
 function App() {
     return (
         <div>
-            <SnakeGame />
+            <Solitaire />
         </div>
     );
 }

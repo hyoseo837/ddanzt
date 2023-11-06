@@ -85,6 +85,7 @@
     background-color: white;
     border: solid red;
     float: left;
+    filter: contrast(60%);
 }
 
 .finalHolder {
