@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/ddanzt/static/css/main.a6ca3495.css",
-    "main.js": "/ddanzt/static/js/main.19caa919.js",
+    "main.css": "/ddanzt/static/css/main.d3ad9ab1.css",
+    "main.js": "/ddanzt/static/js/main.74cab9a6.js",
+    "static/media/Comfortaa-VariableFont_wght.ttf": "/ddanzt/static/media/Comfortaa-VariableFont_wght.7b8c952927af2b0deacd.ttf",
     "index.html": "/ddanzt/index.html",
-    "main.a6ca3495.css.map": "/ddanzt/static/css/main.a6ca3495.css.map",
-    "main.19caa919.js.map": "/ddanzt/static/js/main.19caa919.js.map"
+    "main.d3ad9ab1.css.map": "/ddanzt/static/css/main.d3ad9ab1.css.map",
+    "main.74cab9a6.js.map": "/ddanzt/static/js/main.74cab9a6.js.map"
   },
   "entrypoints": [
-    "static/css/main.a6ca3495.css",
-    "static/js/main.19caa919.js"
+    "static/css/main.d3ad9ab1.css",
+    "static/js/main.74cab9a6.js"
   ]
 }
