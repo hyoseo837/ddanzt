@@ -30,7 +30,9 @@ const SolitaireBoard = () => {
     const [winCount, setWinCount] = useState(
         JSON.parse(localStorage.getItem("win-count")) || 0
     );
-    localStorage.setItem("win-count", JSON.stringify(winCount));
+    useEffect(() => {
+        localStorage.setItem("win-count", JSON.stringify(winCount));
+    }, [winCount]);
 
     const reset = () => {
         setMainBoard(initializeBoard());
@@ -140,9 +142,8 @@ const SolitaireBoard = () => {
         setTimeout(() => {
             alert("Cleared!");
             setWinCount((current) => current + 1);
-            localStorage.setItem("win-count", JSON.stringify(winCount));
             reset();
-        }, 500);
+        }, 300);
     };
 
     const step = () => {

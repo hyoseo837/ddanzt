@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Comfortaa";
+    src: local("Comfortaa"),
+        url(../assets/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf)
+            format("opentype");
+}
+
+.instructionTab {
+    width: 700px;
+    min-height: 25px;
+    position: relative;
+}
+
+.showButton {
+    position: absolute;
+    right: 0;
+    height: 20px;
+    width: 20px;
+    padding: 0px;
+    font-size: small;
+    border-radius: 50%;
+    font-family: Comfortaa;
+}
+
+.instruction {
+    font-family: Comfortaa;
+}

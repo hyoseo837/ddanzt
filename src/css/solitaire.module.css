@@ -1,3 +1,10 @@
+@font-face {
+    font-family: "Comfortaa";
+    src: local("Comfortaa"),
+        url(../assets/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf)
+            format("opentype");
+}
+
 .base {
     outline: solid gray;
     width: 700px;
@@ -30,7 +37,6 @@
     background-color: white;
     float: left;
     border: solid black;
-    font-size: x-large;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -136,7 +142,7 @@
 
 .resetButton {
     margin-top: 5px;
-    font-family: cursive;
+    font-family: Comfortaa;
 }
 
 .winCount {
@@ -145,7 +151,7 @@
     top: 0px;
     right: 0px;
     margin: 7px;
-    font-family: cursive;
+    font-family: Comfortaa;
 }
 
 .utilityBar {
