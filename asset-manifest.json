@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ddanzt/static/css/main.d3ad9ab1.css",
-    "main.js": "/ddanzt/static/js/main.31803451.js",
+    "main.js": "/ddanzt/static/js/main.2ea95515.js",
     "static/media/Comfortaa-VariableFont_wght.ttf": "/ddanzt/static/media/Comfortaa-VariableFont_wght.7b8c952927af2b0deacd.ttf",
     "index.html": "/ddanzt/index.html",
     "main.d3ad9ab1.css.map": "/ddanzt/static/css/main.d3ad9ab1.css.map",
-    "main.31803451.js.map": "/ddanzt/static/js/main.31803451.js.map"
+    "main.2ea95515.js.map": "/ddanzt/static/js/main.2ea95515.js.map"
   },
   "entrypoints": [
     "static/css/main.d3ad9ab1.css",
-    "static/js/main.31803451.js"
+    "static/js/main.2ea95515.js"
   ]
 }
