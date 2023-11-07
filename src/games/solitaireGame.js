@@ -3,9 +3,9 @@ class card {
         this.shape = shape;
         this.number = number;
     }
-    prt() {
-        console.log(this.number, this.shape);
-    }
+    // prt() {
+    //     console.log(this.number, this.shape);
+    // }
 }
 
 function shuffle(array) {
@@ -96,24 +96,24 @@ function shownCards(board) {
 
 function moveCard(board, from, numberOfCards, to) {
     if (from > 10 || to > 10 || from < 0 || to < 0) {
-        console.log("wrong domain");
+        // console.log("wrong domain");
         return board;
     }
     if (from === to) {
-        console.log("you can move to where it came from");
+        // console.log("you can move to where it came from");
         return board;
     }
     if (to >= 8) {
         if (board[to].length !== 0) {
-            console.log("something is there");
+            // console.log("something is there");
             return board;
         } else {
             if (numberOfCards >= 2) {
-                console.log("you cannot put more than 1 cards on extra holder");
+                // console.log("you cannot put more than 1 cards on extra holder");
                 return board;
             } else {
                 board[to].unshift(board[from].shift());
-                console.log("moved!");
+                // console.log("moved!");
                 return board;
             }
         }
@@ -122,30 +122,30 @@ function moveCard(board, from, numberOfCards, to) {
         if (board[to].length === 0) {
             board[from] = board[from].slice(numberOfCards);
             board[to] = tmp;
-            console.log("moved!");
+            // console.log("moved!");
             return board;
         } else {
             const topCard = tmp.slice(-1)[0];
             const targetCard = board[to][0];
             if (["x", "y", "z", "bonus"].includes(targetCard.shape)) {
-                console.log("you cannot put on the special card");
+                // console.log("you cannot put on the special card");
                 return board;
             }
             if (["x", "y", "z", "bonus"].includes(topCard.shape)) {
-                console.log("you cannot put the special card ");
+                // console.log("you cannot put the special card ");
                 return board;
             }
             if (topCard.shape === targetCard.shape) {
-                console.log("you cannot put on the same shape");
+                // console.log("you cannot put on the same shape");
                 return board;
             } else {
                 if (topCard.number === targetCard.number - 1) {
                     board[from] = board[from].slice(numberOfCards);
                     board[to] = [...tmp, ...board[to]];
-                    console.log("moved!");
+                    // console.log("moved!");
                     return board;
                 } else {
-                    console.log("you cannot put on that number");
+                    // console.log("you cannot put on that number");
                     return board;
                 }
             }

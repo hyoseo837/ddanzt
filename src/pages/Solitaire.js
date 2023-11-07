@@ -41,7 +41,7 @@ const Instruction = () => {
     );
 };
 
-const Connect4 = () => {
+const Solitaire = () => {
     const [helpShown, setHelpShown] = useState(false);
     return (
         <div>
@@ -62,4 +62,4 @@ const Connect4 = () => {
     );
 };
 
-export default Connect4;
+export default Solitaire;
