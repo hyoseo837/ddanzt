@@ -107,12 +107,8 @@
 .movingCard {
     width: 50px;
     height: 85px;
-    margin: 5px;
     border-radius: 5px;
-    text-align: center;
-    line-height: 85px;
     background-color: white;
-    border: solid black;
 }
 
 .specialButton {
@@ -134,11 +130,12 @@
 }
 
 .movingCardImg {
-    border-radius: 3px;
+    border-radius: 5px;
     pointer-events: none;
     position: absolute;
     top: 0;
     left: 0;
+    border: black solid;
 }
 
 .resetButton {
