@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SolitaireBoard from "../games/Solitaire/Solitaire.js";
+import Solitaire from "../games/Solitaire/Solitaire.js";
 import styles from "./gamePage.module.css";
 
 const Instruction = () => {
@@ -41,7 +41,7 @@ const Instruction = () => {
     );
 };
 
-const Solitaire = () => {
+const SolitairePage = () => {
     const [helpShown, setHelpShown] = useState(false);
     return (
         <div>
@@ -57,9 +57,9 @@ const Solitaire = () => {
                 </button>
                 {helpShown ? <Instruction /> : null}
             </div>
-            <SolitaireBoard />
+            <Solitaire />
         </div>
     );
 };
 
-export default Solitaire;
+export default SolitairePage;

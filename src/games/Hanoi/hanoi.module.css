@@ -1,0 +1,39 @@
+.base {
+    width: 700px;
+    height: 500px;
+    padding: 10px;
+    border: solid gray;
+}
+.screen {
+    background-color: lightskyblue;
+    height: 95%;
+    border-radius: 5px;
+}
+.utilityBar {
+    margin-top: 7px;
+}
+
+.towerRow {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    padding: 50px;
+}
+
+.tower {
+    width: 200px;
+    height: 300px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+.basePlate {
+    width: 95%;
+    height: 30px;
+    background-color: brown;
+}
+.plate {
+    margin: auto;
+    height: 20px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}

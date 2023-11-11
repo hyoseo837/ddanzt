@@ -1,11 +1,11 @@
-import Solitaire from "./pages/SolitairePage";
-import AutoAnimal from "./pages/AutoAnimalPage";
-import Connect4 from "./pages/Connect4Page";
+import SolitairePage from "./pages/SolitairePage";
+import Connect4Page from "./pages/Connect4Page";
+import HanoiPage from "./pages/HanoiPage";
 
 function App() {
     return (
         <div>
-            <Solitaire />
+            <HanoiPage />
         </div>
     );
 }

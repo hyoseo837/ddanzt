@@ -21,7 +21,7 @@ const images = importAll(
     require.context("./asset", false, /\.(png|jpe?g|svg)$/)
 );
 
-const SolitaireBoard = () => {
+const Solitaire = () => {
     const [mainBoard, setMainBoard] = useState(initializeBoard());
     const [completedLst, setCompletedLst] = useState([0, 0, 0]);
     const [isBonus, setIsBonus] = useState(false);
@@ -570,4 +570,4 @@ const SolitaireBoard = () => {
     );
 };
 
-export default SolitaireBoard;
+export default Solitaire;
