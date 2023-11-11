@@ -5,6 +5,10 @@
             format("opentype");
 }
 
+body {
+    font-family: Comfortaa;
+}
+
 .instructionTab {
     width: 700px;
     min-height: 25px;
@@ -19,9 +23,5 @@
     padding: 0px;
     font-size: small;
     border-radius: 50%;
-    font-family: Comfortaa;
-}
-
-.instruction {
     font-family: Comfortaa;
 }

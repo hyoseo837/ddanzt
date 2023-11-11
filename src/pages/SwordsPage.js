@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Hanoi from "../games/Hanoi/Hanoi";
 import styles from "./gamePage.module.css";
-import Instruction from "../games/Hanoi/Instruction";
+import Swords from "../games/Swords/Swords";
+import Instruction from "../games/Swords/Instruction";
 
-const HanoiPage = () => {
+const SwordsPage = () => {
     const [helpShown, setHelpShown] = useState(false);
     return (
         <div>
@@ -19,9 +19,9 @@ const HanoiPage = () => {
                 </button>
                 {helpShown ? <Instruction /> : null}
             </div>
-            <Hanoi />
+            <Swords />
         </div>
     );
 };
 
-export default HanoiPage;
+export default SwordsPage;
