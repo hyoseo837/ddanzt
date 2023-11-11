@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useDrop } from "react-dnd";
-import styles from "../css/column.module.css";
+import styles from "./column.module.css";
 import Marvel from "./Marvel";
 
-const Connect4Pad = () => {
+const Connect4 = () => {
     const Column = ({ index }) => {
         const [{ isOver }, dropRef] = useDrop({
             accept: "marvel",
@@ -199,4 +199,4 @@ const Connect4Pad = () => {
     );
 };
 
-export default Connect4Pad;
+export default Connect4;

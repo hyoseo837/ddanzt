@@ -1,5 +1,6 @@
-import Connect4 from "./pages/Connect4";
-import Solitaire from "./pages/Solitaire";
+import Solitaire from "./pages/SolitairePage";
+import AutoAnimal from "./pages/AutoAnimalPage";
+import Connect4 from "./pages/Connect4Page";
 
 function App() {
     return (

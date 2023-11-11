@@ -1,6 +1,6 @@
 import { useState } from "react";
-import SolitaireBoard from "../components/SolitaireBoard";
-import styles from "../css/gamePage.module.css";
+import SolitaireBoard from "../games/Solitaire/Solitaire.js";
+import styles from "./gamePage.module.css";
 
 const Instruction = () => {
     return (

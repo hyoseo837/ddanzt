@@ -1,6 +1,6 @@
 import React from "react";
 import { useDrag } from "react-dnd";
-import styles from "../css/marvel.module.css";
+import styles from "./marvel.module.css";
 
 const Marvel = ({ color }) => {
     const [{ isDragging }, dragRef] = useDrag({

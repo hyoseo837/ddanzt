@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import styles from "../css/solitaire.module.css";
+import styles from "./solitaire.module.css";
 import React from "react";
 import {
     initializeBoard,
     isSelectable,
     moveCard,
     shownCards,
-} from "../games/solitaireGame";
-import myReverse from "../functions/myReverse";
+} from "./solitaireGame";
+import myReverse from "../../functions/myReverse";
 import { animated, useSpring } from "@react-spring/web";
 
 function importAll(r) {
@@ -18,7 +18,7 @@ function importAll(r) {
     return images;
 }
 const images = importAll(
-    require.context("../assets/solitaire", false, /\.(png|jpe?g|svg)$/)
+    require.context("./asset", false, /\.(png|jpe?g|svg)$/)
 );
 
 const SolitaireBoard = () => {
