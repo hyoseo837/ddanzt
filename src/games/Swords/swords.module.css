@@ -10,6 +10,7 @@
     background-color: rgb(255, 155, 155);
     font-family: "Skranji", cursive;
     padding: 10px;
+    overflow: hidden;
 }
 
 .btn-home {
