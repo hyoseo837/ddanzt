@@ -1,12 +1,21 @@
 import SolitairePage from "./pages/SolitairePage";
-import Connect4Page from "./pages/Connect4Page";
-import HanoiPage from "./pages/HanoiPage";
-import SwordsPage from "./pages/SwordsPage";
+import ProfileComponents from "./Components/ProfileComponents";
 
 function App() {
     return (
-        <div>
-            <SwordsPage />
+        <div style={{ backgroundColor: "#eae9ea" }}>
+            <div
+                style={{
+                    display: "flex",
+                    // alignItems: "center",
+                    height: "100%",
+                    justifyContent: "center",
+                    marginBottom: "100px",
+                }}
+            >
+                <SolitairePage />
+            </div>
+            <ProfileComponents />
         </div>
     );
 }

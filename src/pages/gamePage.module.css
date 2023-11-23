@@ -11,17 +11,23 @@ body {
 
 .instructionTab {
     width: 700px;
-    min-height: 25px;
+}
+.steamLink {
+    color: inherit;
+    margin-top: 22px;
+    margin-left: 5px;
+}
+.gameTitle {
+}
+.titleRow {
+    flex-direction: row;
+    display: flex;
+    width: 700px;
     position: relative;
 }
-
 .showButton {
+    cursor: pointer;
     position: absolute;
-    right: 0;
-    height: 20px;
-    width: 20px;
-    padding: 0px;
-    font-size: small;
-    border-radius: 50%;
-    font-family: Comfortaa;
+    right: 0px;
+    margin-top: 50px;
 }
