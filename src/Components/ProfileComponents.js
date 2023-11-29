@@ -12,15 +12,83 @@ const ProfileComponents = () => {
         <footer className={styles["myFooter"]}>
             <div>
                 <p className={styles["footerTitle"]}>More Games</p>
-                <span style={{ fontSize: "13px" }}>not ready!</span>
-                <ul></ul>
+
+                <ul className={styles["aboutMeRow"]}>
+                    <li className={styles["aboutMeItems"]}>
+                        <a
+                            style={{
+                                color: "inherit",
+                            }}
+                            href="https://hyoseo837.github.io/ddanzt"
+                        >
+                            Solitaire
+                        </a>
+                    </li>
+                    <li className={styles["aboutMeItems"]}>
+                        <a
+                            style={{
+                                color: "inherit",
+                            }}
+                            href="https://hyoseo837.github.io/snakes"
+                        >
+                            Snake
+                        </a>
+                    </li>
+                    <li className={styles["aboutMeItems"]}>
+                        <a
+                            style={{
+                                color: "inherit",
+                            }}
+                            href="https://hyoseo837.github.io/2048s"
+                        >
+                            2048
+                        </a>
+                    </li>
+                    <li className={styles["aboutMeItems"]}>
+                        <a
+                            style={{
+                                color: "inherit",
+                            }}
+                            href="https://hyoseo837.github.io/flappyBird"
+                        >
+                            flappyBird
+                        </a>
+                    </li>
+                </ul>
             </div>
             <div>
                 <p className={styles["footerTitle"]}>About me</p>
                 <ul className={styles["aboutMeRow"]}>
-                    <li className={styles["aboutMeItems"]}>Profile</li>
-                    <li className={styles["aboutMeItems"]}>Projects</li>
-                    <li className={styles["aboutMeItems"]}>Blog</li>
+                    <li className={styles["aboutMeItems"]}>
+                        <a
+                            style={{
+                                color: "inherit",
+                            }}
+                            href="https://hyoseo837.github.io"
+                        >
+                            Profile
+                        </a>
+                    </li>
+                    <li className={styles["aboutMeItems"]}>
+                        <a
+                            style={{
+                                color: "inherit",
+                            }}
+                            href="https://hyoseo837.github.io#projects"
+                        >
+                            Projects
+                        </a>
+                    </li>
+                    <li className={styles["aboutMeItems"]}>
+                        <a
+                            style={{
+                                color: "inherit",
+                            }}
+                            href="https://hyoseo837.github.io/notepad/index.html"
+                        >
+                            Blog
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div>
